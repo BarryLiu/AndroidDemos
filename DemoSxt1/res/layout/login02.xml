@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <TableLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:stretchColumns="1"
+        >
+        <TableRow>
+            <TextView 
+                android:text="用户名"
+                />
+            <EditText 
+                android:hint="字符在2-10个字符之间"
+                />
+            
+        </TableRow>
+        <TableRow>
+            <TextView 
+                android:text="密码"
+                />
+            <EditText 
+                android:password="true"
+                android:hint="密码在2-10个字符之间"
+                />
+            
+        </TableRow>
+    	<TableLayout 
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content"
+    	    android:layout_marginTop="20dp"
+    	    android:stretchColumns="0,1"
+    	    >
+    	    <TableRow 
+    	        >
+    	        <Button 
+    	            android:background="@drawable/btn_bg"
+    	            android:layout_width="wrap_content"
+    	            android:layout_height="wrap_content"
+    	            android:text="登陆"
+    	            android:textColor="#fff"
+    	            android:drawableLeft="@drawable/login32x32"
+    	            android:layout_gravity="center"
+    	            />
+    	        <Button 
+    	            android:background="@drawable/btn_bg"
+    	            android:textColor="#fff"
+    	            android:layout_width="wrap_content"
+    	            android:layout_height="wrap_content"
+    	            android:text="退出"
+    	            android:drawableLeft="@drawable/exit32x32"
+    	            android:layout_gravity="center"
+    	            />
+    	    </TableRow>
+    	    
+    	</TableLayout>        
+            
+    </TableLayout>
+    
+
+</LinearLayout>
