@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DemoSxt2</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+	<string-array name="gerenls">
+		<item>白起</item>	    
+		<item>曹操</item>	    
+		<item>成吉思汗</item>	    
+		<item>韩信</item>	    
+		<item>李世民</item>	    
+		<item>露儿哈茨</item>	    
+		<item>孙膑</item>	    
+		<item>孙武</item>	    
+		<item>朱元璋</item>	    
+		<item>岳飞</item>	    
+	</string-array>
+</resources>
