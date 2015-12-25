@@ -20,6 +20,7 @@ public class ExamDao_PulParser extends ExamDaoBase implements IExamDao {
 
 	public ExamDao_PulParser(Context context) {
 		mFiles = getFiles(context);
+		loadUsers();//加载所有用户
 	}
 
 	@Override
