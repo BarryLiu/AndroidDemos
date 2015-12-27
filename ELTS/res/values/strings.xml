@@ -4,8 +4,6 @@
     <string name="app_name">ElTS</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
-    
     <string name="root_url">http://10.0.2.2/</string>
     <string name="user_txt">elts-txt/users.txt</string>
     <string name="exam_info_txt">elts-txt/exam_info.txt</string>
@@ -22,12 +20,11 @@
     	pull_xml：xml文件
     	sax_xml：sax解析，使用的xml文件与pull_xml相同
     	json：json文件
-
     -->
     <string name="parse_mode">pull_xml</string>
     <string name="title_activity_login">登录窗口</string>
     <string name="title_activity_exam">考试窗口</string>
     <string name="title_activity_main_menu">考试主窗口</string>
-
+    <string name="title_activity_base">BaseActivity</string>
 
 </resources>
