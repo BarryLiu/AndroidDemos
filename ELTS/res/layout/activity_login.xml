@@ -18,7 +18,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="登录编号" />
+            android:text="登录编号"
+            android:textColor="#000000" />
 
         <EditText
             android:id="@+id/etId"
@@ -36,7 +37,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="登录密码" />
+            android:text="登录密码"
+            android:textColor="#000000" />
 
         <EditText
             android:id="@+id/etPwd"
@@ -58,19 +60,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="快速登陆" />
+            android:text="快速登陆"
+            android:textColor="#000000" />
+
         <RadioButton
             android:id="@+id/rbSaveId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="保存编号" />
+            android:text="保存编号"
+            android:textColor="#000000" />
+
         <RadioButton
             android:id="@+id/rbNotSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="安全登陆" />
+            android:text="安全登陆"
+            android:textColor="#000000"
+            android:textSize="14sp" />
     </RadioGroup>
 
     <LinearLayout

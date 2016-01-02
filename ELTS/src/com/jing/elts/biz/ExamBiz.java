@@ -50,8 +50,7 @@ public class ExamBiz implements IExampBiz{
 
 	@Override
 	public User getUser() {
-		// TODO Auto-generated method stub
-		return null;
+		return mUser;
 	}
 
 	@Override
