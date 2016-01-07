@@ -1,5 +1,6 @@
 package com.jing.elts.biz;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -19,7 +20,7 @@ import com.jing.elts.entity.User;
  * @author Barry
  *
  */
-public class ExamBiz implements IExampBiz{
+public class ExamBiz implements IExampBiz,Serializable{
 	User mUser;//登录者 当前考生
 	ArrayList<Question> mQuestions;
 	ExamInfo mExaminfo;
@@ -67,6 +68,7 @@ public class ExamBiz implements IExampBiz{
 			title = (i+1)+title.substring(title.indexOf("."));			
 			q.setTitle(title);
 		}
+		mExaminfo =mDao.loadExamInfo();
 		mExaminfo.setUid(mUser.getId());
 		return mExaminfo;
 	}
@@ -75,13 +77,11 @@ public class ExamBiz implements IExampBiz{
 	public Question getQuestion(int qid) {
 		return mQuestions.get(qid);
 	}
-
 	@Override
 	public void saveUserAnswers(int qid, ArrayList<String> userAnswers) {
 		Question q = getQuestion(qid);
 		q.setUserAnswers(userAnswers);
 	}
-
 	@Override
 	public int over() {
 		int total=0;

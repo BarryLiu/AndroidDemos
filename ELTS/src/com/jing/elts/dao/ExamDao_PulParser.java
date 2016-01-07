@@ -2,6 +2,7 @@ package com.jing.elts.dao;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -15,7 +16,7 @@ import com.jing.elts.entity.Question;
 import com.jing.elts.entity.User;
 import com.jing.elts.utils.HttpUtils;
 
-public class ExamDao_PulParser extends ExamDaoBase implements IExamDao {
+public class ExamDao_PulParser extends ExamDaoBase implements IExamDao,Serializable {
 	Files mFiles;
 
 	public ExamDao_PulParser(Context context) {

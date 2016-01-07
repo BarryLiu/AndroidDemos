@@ -2,6 +2,7 @@ package com.jing.elts;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
@@ -59,6 +60,12 @@ public class LoginActivity extends BaseActivity {
 				try {
 					User user = mBiz.login(id, pwd);
 					saveLoginInfo(id,pwd);
+					
+					Intent intent =new Intent(LoginActivity.this,MainMenuActivity.class);
+					intent.putExtra("biz", (ExamBiz)mBiz);
+					
+					startActivity(intent);
+					
 				} catch (IdOrPwdException e) {
 					if (e.getMessage().equals("请先注册")) {
 						metId.setError("请先注册");

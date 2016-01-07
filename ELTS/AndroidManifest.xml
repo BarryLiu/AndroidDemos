@@ -29,6 +29,14 @@
             android:name="com.jing.elts.BaseActivity"
             android:label="@string/title_activity_base" >
         </activity>
+        <activity
+            android:name="com.jing.elts.MainMenuActivity"
+            android:label="@string/title_activity_main_menu" >
+        </activity>
+        <activity
+            android:name="com.jing.elts.ExamActivity"
+            android:label="@string/title_activity_exam" >
+        </activity>
     </application>
 
 </manifest>

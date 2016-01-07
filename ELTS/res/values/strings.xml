@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="examInfo">    考试科目：core java    考生编号：1001\n
+    考试时间：10分钟    考题数量：20</string>
+    <string name="question">1.能直接由计算机硬件识别的是______。\n
+A.高级语言\n
+B.中级语言\n
+C.汇编语言\n
+D.机器语言    </string>
     <string name="app_name">ElTS</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="root_url">http://10.0.2.2/</string>
-    
     <string name="user_txt">elts-txt/users.txt</string>
     <string name="exam_info_txt">elts-txt/exam_info.txt</string>
     <string name="question_txt">elts-txt/questions.txt</string>
-    
     <string name="user_xml">elts-xml/users.xml</string>
     <string name="exam_info_xml">elts-xml/exam_info.xml</string>
     <string name="question_xml">elts-xml/questions.xml</string>
-    
     <string name="user_json">elts-json/users.json</string>
     <string name="exam_info_json">elts-json/exam_info.json</string>
     <string name="question_json">elts-json/questions.json</string>
@@ -22,7 +26,7 @@
     	txt：文本文件
     	pull_xml：xml文件
     	sax_xml：sax解析，使用的xml文件与pull_xml相同
-    	json：json文件
+    	json：json文件
     -->
     <string name="parse_mode">pull_xml</string>
     <string name="title_activity_login">登录窗口</string>
