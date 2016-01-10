@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
@@ -18,6 +19,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.RadioGroup;
@@ -72,76 +74,20 @@ public class MainActivity extends Activity {
 		gv_menu.setAdapter(adapter);
 
 	}
-
+	
 	/** 设置ListView 和 GridView的点击事件 */
 	private void initEvent() {
 		// 点击listview的item
-		lv_listView.setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				FileAdapter adapter = (FileAdapter) parent.getAdapter();
-				FileBean fb = (FileBean) adapter.getItem(position);
-
-				File file = new File(fb.getFilePath());
-				if (file.canRead()) {
-					if (file.isDirectory())
-						initData(file.getPath());
-					else {
-						Intent intent = ResUtils.getByMIME_Map(file);
-						if (intent != null)
-							try{
-								startActivity(intent);
-							}catch(Exception e){
-								showTips("没有打开它的程序");
-							}
-						else
-							showTips("这种文件不能打开");
-					}
-				} else {
-					showTips("没有读取的权限");
-				}
-			}
-		});
+		setListViewItemClickLisenter();
 		// listView 的长按删除或复制
-		lv_listView.setOnItemLongClickListener(new OnItemLongClickListener() {
-
-			@Override
-			public boolean onItemLongClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				FileAdapter adapter = (FileAdapter) parent.getAdapter();
-				final FileBean fileBean = (FileBean) adapter.getItem(position);
-				final File file = new File(fileBean.getFilePath());
-				Builder builder = new Builder(MainActivity.this);
-				builder.setTitle("操作");
-				builder.setItems(new String[] { "复制", "删除" },
-						new OnClickListener() {
-
-							@Override
-							public void onClick(DialogInterface arg0, int witch) {
-								switch (witch) {
-								case 0:// 复制
-									FileManager.CopyPath = fileBean
-											.getFilePath();
-									showTips("复制");
-									break;
-								case 1:// 删除
-									if (FileManager.getInstance().deleteFile(
-											file)) {
-										showTips("删除成功");
-										initData(FileManager.CurrPath);
-									} else
-										showTips("删除失败");
-									break;
-								}
-							}
-						}).show();
-				return true;
-			}
-		});
+		setListViewLongClickLisenter();
 
 		// 点击GridView的item
+		setGridViewClickLisenter();
+	}
+
+	/**点击GridView的item*/
+	private void setGridViewClickLisenter() {
 		gv_menu.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -149,7 +95,11 @@ public class MainActivity extends Activity {
 					int position, long id) {
 				switch (position) {
 				case 0:// 点击手机
-					initData("/");
+					String phoneCard = FileManager.getPhoneCard();
+					if (phoneCard == null)
+						showTips("sd卡不存在");
+					else
+						initData(phoneCard);
 					break;
 				case 1:// 点击sd卡
 					String sdCardPath = FileManager.getSdCard();
@@ -217,6 +167,112 @@ public class MainActivity extends Activity {
 							}).show();
 					break;
 
+				}
+			}
+		});
+	}
+	/**listView 的长按删除或复制*/
+	private void setListViewLongClickLisenter() {
+		lv_listView.setOnItemLongClickListener(new OnItemLongClickListener() {
+
+			@Override
+			public boolean onItemLongClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				FileAdapter adapter = (FileAdapter) parent.getAdapter();
+				final FileBean fileBean = (FileBean) adapter.getItem(position);
+				final File file = new File(fileBean.getFilePath());
+				Builder builder = new Builder(MainActivity.this);
+				builder.setTitle("操作");
+				builder.setItems(new String[] { "复制", "删除", "重命名" },
+						
+						new OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface arg0, int witch) {
+								
+								switch (witch) {
+								case 0:// 复制
+									FileManager.CopyPath = fileBean
+											.getFilePath();
+									showTips("复制");
+									break;
+								case 1:// 删除
+									if (FileManager.getInstance().deleteFile(
+											file)) {
+										showTips("删除成功");
+										initData(FileManager.CurrPath);
+									} else
+										showTips("删除失败");
+									break;
+								case 2:// 重命名
+									if(!file.canWrite()){
+										showTips("权限不足");
+										return;
+									}
+									
+									//inputNewName(file);
+									final EditText et_nFileName = new EditText(
+											MainActivity.this);
+									et_nFileName.setFocusable(true);
+									    newFile =new File(file.getPath(),file.getName());
+									AlertDialog.Builder builder = new AlertDialog.Builder(
+											MainActivity.this);
+									builder.setTitle("新文件名");
+									builder.setView(et_nFileName);
+									builder.setPositiveButton("确定",
+											new DialogInterface.OnClickListener() {
+
+												public void onClick(DialogInterface dialog,int which) {
+													String newName = et_nFileName.getText().toString();
+													newFile =new File(file.getParentFile().getPath(),newName);
+													if (FileManager.getInstance().reNameFile(file,newFile)) {
+														initData(FileManager.CurrPath);
+													} else
+														showTips("操作失败");
+												}
+											});
+									builder.show();
+									
+									break;
+								}
+							}
+
+							
+						}).show();
+				return true;
+			}
+		});
+	}
+	//文件需要重命名暂时存放的文件
+	File newFile ;
+	 
+	/**点击listview的item*/
+	private void setListViewItemClickLisenter() {
+		lv_listView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				FileAdapter adapter = (FileAdapter) parent.getAdapter();
+				FileBean fb = (FileBean) adapter.getItem(position);
+
+				File file = new File(fb.getFilePath());
+				if (file.canRead()) {
+					if (file.isDirectory())
+						initData(file.getPath());
+					else {
+						Intent intent = ResUtils.getByMIME_Map(file);
+						if (intent != null)
+							try {
+								startActivity(intent);
+							} catch (Exception e) {
+								showTips("没有打开它的程序");
+							}
+						else
+							showTips("这种文件不能打开");
+					}
+				} else {
+					showTips("没有读取的权限");
 				}
 			}
 		});

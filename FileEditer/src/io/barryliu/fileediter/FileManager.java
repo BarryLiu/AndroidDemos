@@ -68,6 +68,9 @@ public class FileManager {
 	public static String getSdCard() {
 		return Environment.getRootDirectory().getPath();
 	}
+	public static String getPhoneCard(){
+		return Environment.getExternalStorageDirectory().getPath();
+	}
 
 	/** 点击menu的删除文件操作 */
 	public boolean deleteFile(File file) {
@@ -144,4 +147,14 @@ public class FileManager {
 		return false;
 	}
 
+	/**重命名文件*/
+	public boolean reNameFile(File file,File newFile) {
+		
+		if(file.exists()){
+			return file.renameTo(newFile);
+		}
+		return false;
+	}
+
+	
 }

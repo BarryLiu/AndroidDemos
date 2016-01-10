@@ -122,10 +122,10 @@ public class ResUtils {
          R.drawable.menu_exit
  };
 	//以什么结尾的文件
-	public static String[] iconDex = { ".rc", ".txt", ".png", ".mp3", ".mp4" };
+	public static String[] iconDex = { ".rc", ".txt", ".png",".jpg", ".mp3", ".mp4" };
 	//以什么结尾的文件对应的图标
 	public static int[] iconImage = { R.drawable.zip_icon, R.drawable.txt,
-			R.drawable.image, R.drawable.audio, R.drawable.video };
+		R.drawable.image,R.drawable.image, R.drawable.audio, R.drawable.video };
 	
 	//将以什么结尾的文件与图标以键值对存储
 	public static Map<String, Integer> resMap;
