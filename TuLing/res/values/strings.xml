@@ -6,4 +6,12 @@
     <string name="hello_world">Hello world!</string>
     <string name="send">发送</string>
 
+    <string-array 
+        name="welcome_tips">
+		    <item>主人,奴婢等候多时了</item>
+		    <item>主人,一切可好啊</item>
+		    <item>主人,我想你了</item>
+		    <item>欢迎你,主人</item>
+		    <item>你好啊主人,我是小灵</item>
+    </string-array>
 </resources>

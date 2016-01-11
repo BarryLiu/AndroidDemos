@@ -9,7 +9,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
+/**
+ * listView显示聊天内容的适配器
+ * @author Barry
+ *
+ */
 public class TextAdapter extends BaseAdapter{
 	private List<ListData> lists;
 	private Context mContext;
