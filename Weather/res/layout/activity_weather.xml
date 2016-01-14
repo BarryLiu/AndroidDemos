@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+   <!--  <com.juhe.weather.swiperefresh.PullToRefreshScrollView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pull_refresh_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrMode="pullFromStart" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/filler_text" />
+    </com.juhe.weather.swiperefresh.PullToRefreshScrollView> -->
+
+
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:padding="16dp"
+	    android:orientation="vertical"
+	    >
+	    <RelativeLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        >
+	        <TextView android:id="@+id/tv_city"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerInParent="true"
+	            android:text="@string/test_city"
+	            />
+	        <ImageView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignBottom="@id/tv_city"
+	            android:layout_alignTop="@id/tv_city"
+	            android:layout_toRightOf="@id/tv_city"
+	            android:src="@drawable/arrow"
+	            android:layout_marginLeft="4dp"
+	            
+	            />
+	    </RelativeLayout>
+	    <TextView 
+	        android:id="@+id/tv_release"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:textSize="12sp"
+	        android:layout_marginBottom="16dp"
+	        android:text="14:00发布"
+	        />
+	    <View 
+	    android:layout_width="match_parent"
+	    android:layout_height="3px"
+	    android:background="@color/light_grey"
+	    
+	    />
+	</LinearLayout>
+	
+	
+</LinearLayout>
