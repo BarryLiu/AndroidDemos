@@ -3,20 +3,54 @@ package com.example.mytypetextview;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 
-public class MainActivity extends Activity {
-
+public class MainActivity extends BaseActivity {
+	
+	public static final String TEST_STRING="这个是我模仿网上别人的代码写的,主要是自己写的一个TextView子类,效果是 界面打出声音的时候有打字机打印数据的声音。 ";
+	private TypeTextView mTypeTextView;
+	 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+	public void setContentView() {
 		setContentView(R.layout.activity_main);
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
+	public void findViews() {
+		mTypeTextView = (TypeTextView) findViewById(R.id.ttvId);
+ 		mTypeTextView.setOnTypeViewLisenter(new TypeTextView.OnTypeTextViewLisenter() {
+			@Override
+			public void onTypeViewStart() {
+				print(" onTypeViewStart");
+			}
+			@Override
+			public void OnTypeViewOver() {
+				print(" OnTypeViewOver");
+			}
+		});
+		
+		//点击按钮
+		Button btnShow= (Button) findViewById(R.id.btnShow);
+		 btnShow.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				showContent( );
+			}
+		}); 
 	}
 
+	@Override
+	public void getData() {
+		
+	}
+
+	@Override
+	public void showContent() {
+		mTypeTextView.start(TEST_STRING);
+	}
+
+	private void print( String printStr ){
+		System.out.println( "TAG == TypeTextViewActivity, info == " + printStr );
+	}
 }
