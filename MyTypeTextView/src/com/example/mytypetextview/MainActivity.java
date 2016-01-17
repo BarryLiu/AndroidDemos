@@ -6,6 +6,11 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * 
+ * @author Barry
+ *
+ */
 public class MainActivity extends BaseActivity {
 	
 	public static final String TEST_STRING="这个是我模仿网上别人的代码写的,主要是自己写的一个TextView子类,效果是 界面打出声音的时候有打字机打印数据的声音。 ";
@@ -52,5 +57,8 @@ public class MainActivity extends BaseActivity {
 
 	private void print( String printStr ){
 		System.out.println( "TAG == TypeTextViewActivity, info == " + printStr );
+	}
+	public void btnShowClick(){
+		showContent( );
 	}
 }
