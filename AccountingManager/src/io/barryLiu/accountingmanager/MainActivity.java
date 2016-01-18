@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
 	private TextView tv_shouru, tv_zhichu, tv_yuE, tv_curYearMonth;
 	private List<AccountBean> list;
 	private Button btn_jiyibi;
-	private GridView gv_menu;
+	 private GridView gv_menu;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

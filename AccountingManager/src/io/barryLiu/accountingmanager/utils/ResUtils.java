@@ -42,7 +42,7 @@ public class ResUtils {
 		if (menus == null) {
 			menus = new ArrayList<Map<String, Object>>();
 			Map<String, Object> curMap = null;
-			
+
 			curMap = new HashMap<String, Object>();
 			curMap.put("name", "用户");
 			curMap.put("icon", R.drawable.user);
@@ -64,7 +64,12 @@ public class ResUtils {
 			curMap.put("icon", R.drawable.setup_normal);
 			menus.add(curMap);
 		}
-		
+
 		return menus;
 	}
+
+	public static String menuStrs[] = { "用户", "流水", "图表", "预算", "其他" };
+	public static int[] menuIds = { R.drawable.user, R.drawable.daylist_normal,
+			R.drawable.chart2_normal, R.drawable.butget_normal,
+			R.drawable.setup_normal };
 }
