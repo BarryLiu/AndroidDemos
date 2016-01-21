@@ -60,6 +60,24 @@
 	    android:background="@color/light_grey"
 	    
 	    />
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="24dp"
+	        >
+	        <ImageView android:id="@+id/iv_now_weather"
+	            android:layout_height="wrap_content"
+	            android:layout_width="wrap_content"
+	            android:src="@drawable/d00"
+	            />
+	        <TextView 
+	            android:id="@+id/tv_now_weather"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="晴"
+	            />
+	    </LinearLayout>
+	    
 	</LinearLayout>
 	
 	

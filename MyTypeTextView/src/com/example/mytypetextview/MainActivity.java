@@ -30,8 +30,8 @@ public class MainActivity extends BaseActivity {
 				print(" onTypeViewStart");
 			}
 			@Override
-			public void OnTypeViewOver() {
-				print(" OnTypeViewOver");
+			public void onTypeViewOver() {
+				print(" onTypeViewOver");
 			}
 		});
 		

@@ -26,7 +26,7 @@ public class TypeTextView extends TextView {
 	 */
 	private MediaPlayer mMediaPlayer;
 	private String mShowTextString;
-	private Timer mTimer;
+	private Timer mTypeTimer;
 
 	private OnTypeTextViewLisenter mOnTypeViewListener;
 	// 默认打字间隔
@@ -91,16 +91,16 @@ public class TypeTextView extends TextView {
 	}
 
 	private void stopTypeTimer() {
-		if (mTimer != null) {
-			mTimer.cancel();
-			mTimer = null;
+		if (mTypeTimer != null) {
+			mTypeTimer.cancel();
+			mTypeTimer = null;
 		}
 	}
 
 	private void startTypeTimer() {
 		stopTypeTimer();
-		mTimer = new Timer();
-		mTimer.schedule(new TypeTimerTask(), mTypeTimeDelay);
+		mTypeTimer = new Timer();
+		mTypeTimer.schedule(new TypeTimerTask(), mTypeTimeDelay);
 	}
 
 	private void startAudioPlayer() {
@@ -134,7 +134,7 @@ public class TypeTextView extends TextView {
 					} else {
 						stopTypeTimer();
 						if (mOnTypeViewListener == null) {
-							mOnTypeViewListener.OnTypeViewOver();
+							mOnTypeViewListener.onTypeViewOver();
 						}
 					}
 				}
@@ -157,6 +157,6 @@ public class TypeTextView extends TextView {
 		/**
 		 * 结束打印文字
 		 */
-		void OnTypeViewOver();
+		void onTypeViewOver();
 	}
 }
