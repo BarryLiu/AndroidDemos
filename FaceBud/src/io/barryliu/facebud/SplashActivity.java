@@ -1,8 +1,8 @@
 package io.barryliu.facebud;
 
-import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
+import android.content.Intent;
+import android.os.Bundle;
 
 public class SplashActivity extends Activity {
 
@@ -10,6 +10,21 @@ public class SplashActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_splash);
+	
 		
+		
+		new Thread(){
+			public void run() {
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				Intent intent =new Intent(SplashActivity.this,LogoActivity.class	);
+				startActivity(intent);
+				finish();
+			};
+		}.start();
 	}
 }
