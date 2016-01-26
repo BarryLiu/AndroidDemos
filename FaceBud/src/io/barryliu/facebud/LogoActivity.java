@@ -1,5 +1,6 @@
 package io.barryliu.facebud;
 
+import io.barryliu.facebud.res.MyRes;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -47,7 +48,7 @@ public class LogoActivity extends Activity implements OnClickListener {
 		switch (v.getId()) {
 		case R.id.man:
 			Intent intent = new Intent(LogoActivity.this, MainActivity.class);
-
+			intent.putExtra(MyRes.TAG_ISBOY, true);
 			startActivity(intent);
 			break;
 		}
