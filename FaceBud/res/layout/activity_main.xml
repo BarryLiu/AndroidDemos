@@ -41,8 +41,8 @@
     <!-- 主要绘图区域 -->
 	<RelativeLayout 
 	    android:id="@+id/rl"
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
 	    android:layout_weight="1"
 	    ></RelativeLayout>
 	
@@ -72,12 +72,84 @@
 				    android:id="@+id/rb0"
 				    android:text="发型"
 				    style="@style/style_r"
-				    />	            
-	            
+				    />	
+				<RadioButton 
+				    android:id="@+id/rb1"
+				    android:text="脸型"
+				    style="@style/style_r"
+				    />	
+				<RadioButton 
+				    android:id="@+id/rb2"
+				    android:text="眉毛"
+				    style="@style/style_r"
+				    />	
+				<RadioButton 
+				    android:id="@+id/rb3"
+				    android:text="眼睛"
+				    style="@style/style_r"
+				    />	
+				<RadioButton 
+				    android:id="@+id/rb4"
+				    android:text="嘴巴"
+				    style="@style/style_r"
+				    />	
+				<RadioButton 
+				    android:id="@+id/rb5"
+				    android:text="特征"
+				    style="@style/style_r"
+				    />	
+				<RadioButton 
+				    android:id="@+id/rb6"
+				    android:text="眼镜"
+				    style="@style/style_r"
+				    />	
+				<RadioButton 
+				    android:id="@+id/rb7"
+				    android:text="衣服"
+				    style="@style/style_r"
+				    />	
+				<RadioButton 
+				    android:id="@+id/rb8"
+				    android:text="帽子"
+				    style="@style/style_r"
+				    />	
+				<RadioButton 
+				    android:id="@+id/rb9"
+				    android:text="爱好"
+				    style="@style/style_r"
+				    />	
+				<RadioButton 
+				    android:id="@+id/rb10"
+				    android:text="背景"
+				    style="@style/style_r"
+				    />	
+				<RadioButton 
+				    android:id="@+id/rb11"
+				    android:text="气泡"
+				    style="@style/style_r"
+				    />	
 	        </RadioGroup>
 	    </HorizontalScrollView>
 	    
-	    
+	    <FrameLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:background="#00ff00"
+	        >
+	        <TextView 
+	            android:layout_width="80dp"
+	            android:layout_height="2dp"
+	            android:background="#0000ff"
+	            android:id="@+id/line"
+	            />
+	    </FrameLayout>
+		<android.support.v4.view.ViewPager
+		    android:id="@+id/vp"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    >
+		    
+		</android.support.v4.view.ViewPager>	    
 	</LinearLayout>
 	
 	
