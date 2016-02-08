@@ -1,5 +1,6 @@
 package io.barryliu.driverexam;
 
+import io.barryliu.driverexam.fragment.MyFragment;
 import io.barryliu.driverexam.fragment.TypeFragment;
 import android.graphics.Canvas;
 import android.os.Bundle;
@@ -18,15 +19,15 @@ import com.ab.view.titlebar.AbTitleBar;
 public class SlidingMenuZoomActivity extends AbActivity {
 	public SlidingMenu menu;
 	private AbTitleBar mAbTitleBar;
- 	 private MyApplication myApp = null;
+ 	private MyApplication myApp;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		setAbContentView(R.layout.sliding_menu_content);
-		//myApp=(MyApplication)getApplication();
-		
+	//	myApp=(MyApplication)getApplication();
+		Toast.makeText(this, getApplication().toString(), 1).show();
 		addTitleBar();// 添加头部性息
 		addMenu();// 添加侧滑栏Menu
 	}
@@ -40,7 +41,7 @@ public class SlidingMenuZoomActivity extends AbActivity {
 		mAbTitleBar.setLogo(R.drawable.button_selector_menu);
 		mAbTitleBar.setTitleBarBackground(R.color.green_dark2);
 		mAbTitleBar.setTitleTextMargin(10, 0, 0, 0);
-		// mAbTitleBar.setLogoLine(R.drawable.line);
+		 mAbTitleBar.setLogoLine(R.drawable.line);
 		mAbTitleBar.setTitleBarGravity(Gravity.CENTER, Gravity.CENTER);
 		mAbTitleBar.getLogoView().setOnClickListener(new OnClickListener() {
 
@@ -58,6 +59,9 @@ public class SlidingMenuZoomActivity extends AbActivity {
 
 	public void changeTitleText() {
 		String kemu = "驾考秘典-科目一";
+ 		/*if (myApp.KEMU == 3) {
+			kemu = "驾考秘典-科目四";
+		}*/
 		mAbTitleBar.setTitleText(kemu);
 	}
 
@@ -78,9 +82,10 @@ public class SlidingMenuZoomActivity extends AbActivity {
 		menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
 		// menu视图的Fragment添加
 		menu.setMenu(R.layout.sliding_menu_menu);
-//		getSupportFragmentManager().beginTransaction()
-//				.replace(R.id.menu_frame, new MyFragment()).commit();
-
+ 		getSupportFragmentManager().beginTransaction()
+ 				.replace(R.id.menu_frame, new MyFragment()).commit();
+ 		
+ 		
 		// 动画配置
 		menu.setBehindCanvasTransformer(new CanvasTransformer() {
 			@Override
