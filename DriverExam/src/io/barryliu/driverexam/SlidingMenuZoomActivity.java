@@ -26,10 +26,10 @@ public class SlidingMenuZoomActivity extends AbActivity {
 		super.onCreate(savedInstanceState);
 
 		setAbContentView(R.layout.sliding_menu_content);
-	//	myApp=(MyApplication)getApplication();
+	 	//myApp=(MyApplication)getApplication();
 		Toast.makeText(this, getApplication().toString(), 1).show();
-		addTitleBar();// 添加头部性息
-		addMenu();// 添加侧滑栏Menu
+		//addTitleBar();// 添加头部性息
+		//addMenu();// 添加侧滑栏Menu
 	}
 
 	/***
