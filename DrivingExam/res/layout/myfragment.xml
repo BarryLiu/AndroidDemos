@@ -1,0 +1,176 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F4F4"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res/com.lx.drivingexam">
+
+
+	<ScrollView
+	    android:id="@+id/scrollView1"
+	    android:layout_width="match_parent"
+	    android:padding="10dp"
+	    android:scrollbars="none"
+	    android:layout_height="match_parent" >
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical" >
+		    <RelativeLayout
+		        android:id="@+id/rl_question"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:paddingTop="10dp"
+		        android:paddingBottom="10dp"
+		        android:background="@drawable/bomm_correct" >
+		
+		        <TextView
+		            android:id="@+id/tv_show_question"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:textSize="18sp"
+		            android:lineSpacingExtra="3dp"
+		            android:layout_alignParentLeft="true"
+		            android:layout_alignParentTop="true" />
+		
+		        <ImageView
+		            android:id="@+id/iv_question"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_centerHorizontal="true"
+		            android:layout_below="@+id/tv_show_question"
+		            android:src="@drawable/home_bottom_bar" />
+
+		        <VideoView
+		            android:id="@+id/videoView"
+		            android:layout_width="320dp"
+		            android:layout_height="142dp"
+		            android:layout_below="@+id/iv_question"
+		            android:layout_centerHorizontal="true" />
+				
+		    </RelativeLayout>
+	        <com.lx.drivingexam.view.NonScrollListView
+	            android:id="@+id/listview_an"
+	            android:layout_width="match_parent"
+	            android:layout_marginTop="10dp"
+	            android:listSelector="#00000000"
+	            android:layout_height="match_parent" />
+	        <Button 
+	            android:id="@+id/bt_selects_ok"
+	            android:layout_width="wrap_content"
+	            android:layout_height="40dp"
+	            android:layout_marginTop="10dp"
+	            android:visibility="gone"
+	            android:paddingLeft="60dp"
+	            android:paddingRight="60dp"
+	            android:textColor="@color/white"
+	            android:layout_gravity="center_horizontal"
+	            android:background="@drawable/bt_selector"
+	            android:text="@string/bt_ok"
+	            />
+		    <LinearLayout
+		       android:id="@+id/ll_answer_true"
+		       android:layout_width="match_parent"
+		       android:layout_height="50dp"
+		       android:background="@drawable/bomm"
+		       android:gravity="center_vertical"
+		       android:layout_marginTop="10dp"
+		       android:visibility="gone"
+		       android:orientation="horizontal" >
+			 <ImageView
+		           android:layout_width="wrap_content"
+		           android:layout_height="wrap_content"
+		           android:paddingRight="10dp"
+		           android:src="@drawable/question_right_txt_left" />
+			 <TextView
+		           android:id="@+id/tv_answer_true"
+		           android:textSize="15sp"
+		           android:textColor="#47BC02"
+		           android:layout_width="wrap_content"
+		           android:layout_height="wrap_content"
+		           android:text="@string/tv_answer_true" />
+			 <ImageView
+		           android:layout_width="wrap_content"
+		           android:layout_height="wrap_content"
+		           android:paddingLeft="10dp"
+		           android:src="@drawable/question_right_txt_right" />
+		    </LinearLayout>
+		    <LinearLayout
+		       android:id="@+id/ll_answer_false"
+		       android:layout_width="match_parent"
+		       android:layout_height="50dp"
+		       android:background="@drawable/bomm"
+		       android:visibility="gone"
+		       android:layout_marginTop="10dp"
+		       android:gravity="center_vertical"
+		       android:orientation="horizontal" >
+			 <ImageView
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:paddingRight="10dp"
+		            android:src="@drawable/question_wrong_txt_left" />
+			 <TextView
+		           android:id="@+id/tv_answer_false"
+		           android:textSize="15sp"
+		           android:textColor="#B70E30"
+		           android:layout_width="wrap_content"
+		           android:layout_height="wrap_content" />
+			 <ImageView
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:paddingLeft="10dp"
+		            android:src="@drawable/question_wrong_txt_right" />
+		    </LinearLayout>
+			<RelativeLayout
+		       android:id="@+id/rl_explain"
+		       android:layout_width="match_parent"
+		       android:layout_height="wrap_content"
+		       android:background="@drawable/bomm"
+		       android:visibility="gone"
+		       android:layout_marginTop="10dp"
+		        >
+			 <TextView
+			       android:id="@+id/tv_explain1"
+		           android:layout_width="wrap_content"
+		           android:layout_height="wrap_content"
+		           android:background="@drawable/question_explain"
+		           android:text="@string/tv_explain"
+		           android:textSize="16sp"
+		           android:layout_alignParentLeft="true"
+		           android:layout_alignParentTop="true"
+		           android:textColor="#55BD16" />
+		     <LinearLayout 
+		         android:id="@+id/ll_my_star"
+		         android:layout_width="110dp"
+		         android:layout_height="50dp"
+		         android:layout_alignParentTop="true"
+		         android:layout_alignParentRight="true">
+		         <TextView
+		           android:layout_width="wrap_content"
+		           android:layout_height="wrap_content"
+		           android:text="@string/tv_difficulty" />
+		         <com.lx.drivingexam.view.MyStarImageView
+		        	 android:id="@+id/my_iv_star"
+			         android:layout_width="wrap_content"
+			         android:layout_height="wrap_content"
+			         android:layout_marginTop="3dp"
+			         app:difficulty="0"
+		          />
+		     </LinearLayout>
+		     
+			 <TextView
+			       android:id="@+id/tv_explain"
+		           android:layout_width="wrap_content"
+		           android:layout_height="wrap_content"
+		           android:text="@string/tv_explain"
+		           android:layout_marginTop="10dp"
+		           android:textSize="18sp"
+		           android:layout_alignParentLeft="true"
+		           android:layout_below="@+id/tv_explain1" />
+		    </RelativeLayout>
+	    </LinearLayout>
+	</ScrollView>
+
+</LinearLayout>

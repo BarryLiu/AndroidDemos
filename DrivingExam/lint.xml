@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="UseSparseArrays">
+        <ignore path="src/com/lx/drivingexam/fragment/QuestionFragment.java" />
+    </issue>
+    <issue id="ValidFragment">
+        <ignore path="src/com/lx/drivingexam/fragment/MyFragment.java" />
+    </issue>
+</lint>

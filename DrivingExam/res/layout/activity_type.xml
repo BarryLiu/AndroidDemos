@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/green_dark2"
+    android:gravity="center"
+    android:paddingBottom="30dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp" >
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/type_bg"
+        android:gravity="center"
+        android:orientation="vertical" >
+		<com.lx.drivingexam.view.MyImageView
+            android:id="@+id/iv_mock_examination "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:scaleType="matrix"
+            android:src="@drawable/ic_click_deflect_bottom2" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <com.lx.drivingexam.view.MyImageView
+                    android:id="@+id/iv_sort_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:scaleType="matrix"
+                    android:src="@drawable/ic_click_deflect_left_top" />
+
+                <com.lx.drivingexam.view.MyImageView
+                    android:id="@+id/iv_random"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:scaleType="matrix"
+                    android:src="@drawable/ic_click_deflect_left_bottom1" />
+            </LinearLayout>
+
+            <com.lx.drivingexam.view.MyImageView
+                android:id="@+id/iv_wrongs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:scaleType="matrix"
+                android:src="@drawable/ic_click_deflect_right2" />
+        </LinearLayout>
+
+        <com.lx.drivingexam.view.MyImageView
+            android:id="@+id/iv_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:scaleType="matrix"
+            android:src="@drawable/ic_click_deflect_bottom12" />
+    </LinearLayout>
+
+</RelativeLayout>
