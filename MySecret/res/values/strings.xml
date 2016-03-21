@@ -10,5 +10,13 @@
     <string name="getcode">GetCode</string>
     <string name="code">code</string>
     <string name="login">Login</string>
+    <string name="title_activity_pub_message">PubMessageActivity</string>
+    <string name="publish_message">publish message</string>
+    <string name="title_activity_message">MessageActivity</string>
+    <string name="phone_num_can_not_null">phone_num_can_not_null</string>
+    <string name="fail_to_get_code">fail to get code </string>
+    <string name="suc_to_get_code">success to get code ,please check your message </string>
+    <string name="connection">connection</string>
+    <string name="connection_to_server">connection to server ,Please </string>
 
 </resources>
