@@ -37,6 +37,7 @@ public class NetConnection {
 								new OutputStreamWriter(uc.getOutputStream(),
 										Config.CHARSET));
 						bw.write(paramsStr.toString());
+						bw.flush();
 						break;
 					case GET:
 						uc = new URL(url + "?" + paramsStr.toString())
